@@ -136,6 +136,7 @@ export default function App() {
         style={{ animationDelay: '540ms' }}
       >
         <h2 className="font-sans text-xs tracking-[0.3em] text-champanhe">CONSULTÓRIO</h2>
+        <p className="mt-1 font-serif text-2xl font-medium text-creme">Espaço Evoluir</p>
         <address className="mt-2 font-sans text-sm not-italic leading-relaxed text-creme/90">
           Rua Barão de São Borja, 62 — Sala 105
           <br />
