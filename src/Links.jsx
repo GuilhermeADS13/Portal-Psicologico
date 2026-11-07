@@ -1,14 +1,14 @@
 import logo from './assets/logo.png'
 import perfil from './assets/perfil.jpg'
 import { LINKS } from './contato'
-import { WhatsappIcon, InstagramIcon, PinIcon } from './icons'
+import { WhatsappIcon, InstagramIcon, PinIcon, GlobeIcon } from './icons'
 
-function LinkButton({ href, children, primary = false, delay }) {
+function LinkButton({ href, children, primary = false, externo = true, delay }) {
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={externo ? '_blank' : undefined}
+      rel={externo ? 'noopener noreferrer' : undefined}
       style={{ animationDelay: delay }}
       className={`fade-up flex w-full items-center justify-center gap-3 rounded-full border px-6 py-4 font-sans text-base tracking-[0.08em] transition-transform duration-200 hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champanhe ${
         primary
@@ -88,11 +88,15 @@ export default function Links() {
           <WhatsappIcon className="h-6 w-6" />
           <span className="font-medium">Agendar pelo WhatsApp</span>
         </LinkButton>
-        <LinkButton href={LINKS.instagram} delay="380ms">
+        <LinkButton href="/" externo={false} delay="380ms">
+          <GlobeIcon className="h-6 w-6" />
+          <span>Conheça meu trabalho</span>
+        </LinkButton>
+        <LinkButton href={LINKS.instagram} delay="460ms">
           <InstagramIcon className="h-6 w-6" />
           <span>Instagram</span>
         </LinkButton>
-        <LinkButton href={LINKS.maps} delay="460ms">
+        <LinkButton href={LINKS.maps} delay="540ms">
           <PinIcon className="h-6 w-6" />
           <span>Como chegar</span>
         </LinkButton>
@@ -101,7 +105,7 @@ export default function Links() {
       {/* endereço */}
       <section
         className="fade-up mt-8 w-full rounded-2xl border border-champanhe/40 bg-cacau/15 px-6 py-5 text-center"
-        style={{ animationDelay: '540ms' }}
+        style={{ animationDelay: '620ms' }}
       >
         <h2 className="font-sans text-xs tracking-[0.3em] text-champanhe">CONSULTÓRIO</h2>
         <p className="mt-1 font-serif text-2xl font-medium text-creme">Espaço Evoluir</p>
@@ -115,7 +119,7 @@ export default function Links() {
       </section>
 
       {/* rodapé */}
-      <footer className="fade-up mt-10 flex flex-col items-center" style={{ animationDelay: '620ms' }}>
+      <footer className="fade-up mt-10 flex flex-col items-center" style={{ animationDelay: '700ms' }}>
         <img
           src={logo}
           alt="Logotipo Beatriz Chagas Psicologia"
