@@ -122,7 +122,7 @@ const EXPERIENCIA = [
 const DUVIDAS = [
   {
     pergunta: 'Como agendo uma sessão?',
-    resposta: `Pelo WhatsApp, no número ${TELEFONE}. Na mensagem, conte se prefere atendimento presencial ou online.`,
+    resposta: `Pelo WhatsApp, no número ${TELEFONE}, ou por mensagem no Instagram, ${INSTAGRAM}. Na mensagem, conte se prefere atendimento presencial ou online.`,
   },
   {
     pergunta: 'Como funciona o atendimento online?',
@@ -441,6 +441,14 @@ function Atendimento() {
               Por videochamada, para quem mora longe ou prefere ser atendido de casa. O sigilo e o cuidado
               são os mesmos do consultório.
             </p>
+            <a
+              href={LINKS.salaOnline}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-block text-caramelo underline decoration-caramelo/40 underline-offset-[6px] hover:decoration-caramelo"
+            >
+              Acessar a sala online
+            </a>
           </article>
         </div>
       </div>
@@ -561,9 +569,21 @@ function Contato() {
             Agende sua primeira sessão
           </h2>
           <p className="mt-5 max-w-md text-[1.0625rem] leading-[1.75] text-creme/80">
-            O primeiro passo é uma mensagem. Pelo WhatsApp você tira dúvidas e combina o melhor horário.
+            O primeiro passo é uma mensagem. Pelo WhatsApp ou pelo Instagram, você tira dúvidas e combina o
+            melhor horário.
           </p>
-          <BotaoWhatsapp claro className="mt-10" />
+          <div className="mt-10 flex flex-wrap gap-4">
+            <BotaoWhatsapp claro />
+            <a
+              href={LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-champanhe/70 px-7 py-4 font-medium tracking-wide text-creme transition-colors duration-200 hover:bg-creme/10"
+            >
+              <InstagramIcon className="h-5 w-5 text-champanhe" />
+              Falar pelo Instagram
+            </a>
+          </div>
 
           <ul className="mt-12 space-y-4 text-creme/85">
             <li>
