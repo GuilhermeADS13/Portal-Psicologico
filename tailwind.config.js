@@ -8,6 +8,8 @@ export default {
         champanhe: '#EAD2A8',
         creme: '#F6ECDC',
         cacau: '#3E2E1D',
+        'cacau-escuro': '#30231A',
+        papel: '#FBF6EE',
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],

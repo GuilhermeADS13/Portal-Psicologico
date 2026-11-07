@@ -1,6 +1,9 @@
 # Portal Psicológico — Beatriz Chagas
 
-Landing page agregadora de links da psicóloga **Beatriz Chagas** (CRP 02/31234), no estilo "link na bio": um único endereço que reúne WhatsApp, Instagram e a localização do consultório.
+Site profissional da psicóloga **Beatriz Chagas Silva** (CRP 02/31234), com duas páginas:
+
+- **`/`** — site completo, baseado no currículo: apresentação, quem ela atende, modalidades (presencial e online), psicanálise, como funciona, formação e experiência, dúvidas frequentes e contato com mapa
+- **`/links`** — o "link na bio" original (WhatsApp, Instagram e como chegar), para usar no Instagram
 
 ## Stack
 
@@ -30,11 +33,15 @@ npm run build
 
 ## Manutenção
 
-Tudo que muda com frequência está em [src/App.jsx](src/App.jsx):
+- **Contatos** (WhatsApp, Instagram, Maps, telefone, e-mail): [src/contato.js](src/contato.js), usados pelas duas páginas
+- **Textos do site**: [src/App.jsx](src/App.jsx) — listas `PUBLICOS`, `PASSOS`, `FORMACAO`, `EXPERIENCIA` e `DUVIDAS` no topo; demais textos dentro de cada seção
+- **Página de links**: [src/Links.jsx](src/Links.jsx) (endereço no bloco `<address>`)
+- **Endereço do consultório**: aparece em `App.jsx` (seções Atendimento e Contato) e em `Links.jsx`
+- **Imagens**: substituir `src/assets/perfil.jpg` ou `src/assets/logo.png` mantendo os nomes. `coruja.png` (cabeçalho) e `assinatura.png` (seção Sobre) são recortes do `logo.png`
 
-- **Objeto `LINKS`** (topo do arquivo): URLs do WhatsApp, Instagram e Google Maps
-- **Bloco `<address>`**: endereço do consultório
-- **Imagens**: substituir `src/assets/perfil.jpg` ou `src/assets/logo.png` mantendo os nomes
+### Divulgação ética (CFP)
+
+O conteúdo segue o art. 20 do Código de Ética Profissional do Psicólogo: nome completo e CRP visíveis, só títulos que ela possui (as pós-graduações aparecem como "pós-graduação", não como "especialista"), sem depoimentos de pacientes, sem preço como propaganda e sem promessa de resultado. Ao editar textos, manter essas regras.
 
 ### Links configurados
 
@@ -48,4 +55,5 @@ Derivada do logotipo (coruja + lua crescente sobre caramelo):
 
 - **Paleta:** caramelo `#8B6946`, champanhe `#EAD2A8`, creme `#F6ECDC`, cacau `#3E2E1D`
 - **Tipografia:** Cormorant Garamond (nome) + Jost (botões e legendas)
-- **Detalhes:** arco crescente com estrelas ao redor da foto, grão sutil no fundo, animação de entrada em cascata, `prefers-reduced-motion` respeitado
+- **Fundos do site:** papel `#FBF6EE` nas seções claras; cacau nas seções "noturnas" (topo e contato)
+- **Detalhes:** no site, a foto fica dentro de uma lua crescente que se desenha ao carregar (como a coruja no logo) e os públicos atendidos usam fases da lua; na página de links, arco crescente com estrelas ao redor da foto. Grão sutil no fundo, `prefers-reduced-motion` respeitado

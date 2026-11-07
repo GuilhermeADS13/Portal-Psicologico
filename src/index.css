@@ -2,7 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* site completo (/) */
 body {
+  background-color: #fbf6ee;
+  color: #3e2e1d;
+}
+
+.site :focus-visible {
+  outline: 2px solid #8b6946;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.site .noite :focus-visible {
+  outline-color: #ead2a8;
+}
+
+/* página de links (/links) */
+body.links {
   background-color: #8b6946;
   background-image: radial-gradient(
     ellipse 120% 70% at 50% 0%,
@@ -61,7 +82,48 @@ body::before {
   animation-delay: 1.3s;
 }
 
+/* hero do site: a lua crescente se desenha e o retrato surge dentro dela */
+@keyframes desenhar {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes surgir {
+  to {
+    opacity: 1;
+  }
+}
+
+.lua-traco {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: desenhar 1.9s cubic-bezier(0.6, 0.1, 0.3, 1) 0.15s forwards;
+}
+
+.lua-brilho,
+.retrato {
+  opacity: 0;
+  animation: surgir 1.2s ease-out 0.9s forwards;
+}
+
+.retrato {
+  animation-delay: 0.45s;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .lua-traco {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .lua-brilho,
+  .retrato {
+    animation: none;
+    opacity: 1;
+  }
   .fade-up {
     animation: none;
     opacity: 1;
