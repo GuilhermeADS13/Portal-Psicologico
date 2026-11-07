@@ -447,7 +447,7 @@ function Atendimento() {
               rel="noopener noreferrer"
               className="mt-5 inline-block text-caramelo underline decoration-caramelo/40 underline-offset-[6px] hover:decoration-caramelo"
             >
-              Acessar a sala online
+              Fazer meu cadastro para o atendimento online
             </a>
           </article>
         </div>
